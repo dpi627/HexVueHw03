@@ -1,0 +1,2 @@
+- Use Conventional Commit Message
+- Rewrite in zhTW
