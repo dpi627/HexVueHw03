@@ -1,16 +1,16 @@
 <template>
   <div class="card">
-    <img :src="content.imgUrl" class="card-img-top" alt="...">
+    <img :src="innerData.imgUrl" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{ content.title }}</h5>
+      <h5 class="card-title">{{ innerData.title }}</h5>
       <p class="card-text">
-        {{ content.description }}
+        {{ innerData.description }}
         <br />
         {{ value }}
         <br />
         <code>
           <pre>
-{{ content }}
+{{ innerData }}
           </pre>
         </code>
       </p>
@@ -24,5 +24,5 @@
 <script setup>
 import { defineProps } from 'vue';
 
-defineProps(['content', 'value']);
+defineProps(['innerData', 'value']);
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <EasyHeader />
-    <EasyCard :content="data" :value="extraVal" />
+    <EasyCard :inner-data="data" :value="extraVal" />
     <!-- <div class="row g-4">
       <div class="col-4" v-for="i in 6" :key="i">
         <EasyCard />
