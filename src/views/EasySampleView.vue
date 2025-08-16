@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-    <header class="header">
-      <h1>Eazy Header</h1>
-    </header>
+    <EasyHeader />
     <div class="row g-4">
       <div class="col-4" v-for="i in 10" :key="i">
         <div class="card">
@@ -23,3 +21,7 @@
     </footer>
   </div>
 </template>
+
+<script setup>
+import EasyHeader from '@/components/EasyHeader.vue';
+</script>
