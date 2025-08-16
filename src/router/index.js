@@ -22,6 +22,11 @@ const router = createRouter({
       name: 'ezsample',
       component: () => import('../views/EasySampleView.vue'),
     },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: () => import('../views/CartView.vue'),
+    },
   ],
 })
 
