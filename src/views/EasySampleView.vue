@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import EasyCard from '@/components/EasyCard.vue';
-import EasyFooter from '@/components/EasyFooter.vue';
 import EasyHeader from '@/components/EasyHeader.vue';
+import EasyFooter from '@/components/EasyFooter.vue';
+import EasyCard from '@/components/EasyCard.vue';
 </script>
