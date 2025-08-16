@@ -6,6 +6,8 @@
       <p class="card-text">
         {{ content.description }}
         <br />
+        {{ value }}
+        <br />
         <code>
           <pre>
 {{ content }}
@@ -22,5 +24,5 @@
 <script setup>
 import { defineProps } from 'vue';
 
-defineProps(['content']);
+defineProps(['content', 'value']);
 </script>
