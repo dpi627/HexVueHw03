@@ -1,11 +1,12 @@
 <template>
   <div class="container">
     <EasyHeader />
-    <div class="row g-4">
+    <EasyCard />
+    <!-- <div class="row g-4">
       <div class="col-4" v-for="i in 6" :key="i">
         <EasyCard />
       </div>
-    </div>
+    </div> -->
     <EasyFooter />
   </div>
 </template>
