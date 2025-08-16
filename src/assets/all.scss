@@ -1,10 +1,11 @@
 // 先覆蓋 Bootstrap 變數（如果需要）
 $primary: #349b;
+$my-bg: #efefef;
 
 // 導入 Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
 // 然後是您自己的樣式
 body {
-  background-color: $primary;
+  background-color: $my-bg;
 }
