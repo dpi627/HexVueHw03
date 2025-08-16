@@ -12,11 +12,9 @@ export const useCartStore = defineStore('cart', () => {
     items.value.splice(key, 1)
   }
 
-  const totalCount = computed(() => items.value.length)
-
   const totalPrice = computed(() => {
     return items.value.reduce((total, item) => total + item.price, 0)
   })
 
-  return { items, addItem, removeItem, totalCount, totalPrice }
+  return { items, addItem, removeItem, totalPrice }
 })
