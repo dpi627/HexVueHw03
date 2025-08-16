@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div class="row mb-4">
+      <h2>Products</h2>
       <div class="col-4 g-4" v-for="item in data.products" :key="item.id">
         <h5>{{ item.name }}</h5>
         <p>Price: {{ item.price }}</p>
@@ -9,13 +10,9 @@
     </div>
     <div class="row">
       <h2>Cart Items</h2>
-      <ul>
-        <li v-for="(item, index) in cart.items" :key="index">
-          {{ item.name }} - {{ item.price }}
-          <button @click="cart.removeItem(item)">Remove</button>
-        </li>
-      </ul>
-      <p>Total: {{ cart.totalPrice }}</p>
+      <div class="col-4 g-2" v-for="(item, index) in cart.items" :key="index">
+        [{{ index + 1 }}] {{ item.name }}
+      </div>
     </div>
   </div>
 </template>
