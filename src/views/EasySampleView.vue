@@ -3,7 +3,7 @@
     <header class="header">
       <h1>Eazy Header</h1>
     </header>
-    <div class="row">
+    <div class="row g-4">
       <div class="col-4" v-for="i in 10" :key="i">
         <div class="card">
           <img
