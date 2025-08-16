@@ -13,5 +13,5 @@
 <script setup>
 import EasyHeader from '@/components/EasyHeader.vue';
 import EasyFooter from '@/components/EasyFooter.vue';
-import EasyCard from '@/components/EasyCard.vue';
+// import EasyCard from '@/components/EasyCard.vue';
 </script>
