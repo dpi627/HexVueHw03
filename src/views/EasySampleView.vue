@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <EasyHeader />
-    <EasyCard :inner-data="data" :value="extraVal" />
+    <EasyCard :inner-data="data" :value="extraVal" @emit-title="changeTitle" />
     <!-- <div class="row g-4">
       <div class="col-4" v-for="i in 6" :key="i">
         <EasyCard />
@@ -24,4 +24,9 @@ const data = ref({
 });
 
 const extraVal = ref('額外資訊');
+
+// 修改標題的方法
+const changeTitle = (newTitle) => {
+  data.value.title = newTitle;
+}
 </script>

@@ -14,7 +14,7 @@
           </pre>
         </code>
       </p>
-      <a href="#" class="btn btn-primary">
+      <a href="#" class="btn btn-primary" @click="changeOutterTitle">
         Go somewhere
       </a>
     </div>
@@ -22,7 +22,16 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 
 defineProps(['innerData', 'value']);
+
+// 定義事件名稱
+const emit = defineEmits(['emitTitle']);
+
+// 定義方法
+const changeOutterTitle = () => {
+  console.log('內層觸發 emit')
+  emit('emitTitle', '內層送出的修改')
+}
 </script>
