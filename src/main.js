@@ -5,7 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
-import App from './AppHw3.vue'
+import App from './EazySample.vue'
 import router from './router'
 
 const app = createApp(App)
