@@ -50,7 +50,7 @@
             </div>
             <textarea v-model="cart.memo" class="form-control mb-3" rows="3" placeholder="備註"></textarea>
             <div class="text-end">
-              <button @click.prevent="cart.clear" class="btn btn-primary">送出</button>
+              <button @click.prevent="createOrder" class="btn btn-primary">送出</button>
             </div>
           </template>
           <div v-else class="alert alert-primary text-center">請選擇品項</div>
@@ -62,7 +62,7 @@
           <div class="card">
             <div class="card-body">
               <div class="card-title">
-                <h5>訂單</h5>
+                <h5>訂單 #{{ order.orderId }}</h5>
                 <table class="table">
                   <thead>
                     <tr>
@@ -72,26 +72,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>翡翠檸檬</td>
-                      <td>7</td>
-                      <td>385</td>
-                    </tr>
-                    <tr>
-                      <td>冬瓜檸檬</td>
-                      <td>7</td>
-                      <td>315</td>
-                    </tr>
-                    <tr>
-                      <td>冬瓜檸檬</td>
-                      <td>4</td>
-                      <td>180</td>
+                    <tr v-for="item in order.items" :key="item.id">
+                      <td>{{ item.name }}</td>
+                      <td>{{ item.quantity }}</td>
+                      <td>{{ item.subtotal }}</td>
                     </tr>
                   </tbody>
                 </table>
-                <div class="text-end">備註: <span>都不要香菜</span></div>
+                <div class="text-end">備註: <span>{{ order.memo }}</span></div>
                 <div class="text-end">
-                  <h5>總計: <span>$145</span></h5>
+                  <h5>總計: <span>${{ order.totalPrice }}</span></h5>
                 </div>
               </div>
             </div>
@@ -105,9 +95,15 @@
 <script setup>
 import { ref } from 'vue'
 import { useCartStore } from '@/stores/cart'
+import { useOrderStore } from '@/stores/order'
 
 const cart = useCartStore()
+const order = useOrderStore()
 
+const createOrder = () => {
+  order.create(cart)
+  cart.clear()
+}
 
 const drinks = ref([
   {
