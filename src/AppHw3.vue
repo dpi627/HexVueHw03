@@ -27,7 +27,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="item in cart.items" :key="item.id">
+                <tr v-for="item in cart.items" :key="item.id" class="align-middle">
                   <td>
                     <button type="button" class="btn btn-sm" @click="cart.removeItem(item)">x</button>
                   </td>
