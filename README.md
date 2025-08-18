@@ -760,3 +760,33 @@ const data = [
 ```
 
 </details>
+
+# 完工說明
+
+- 完成 LV3，包含拆分三個元件與兩個 Store
+- 其餘檔案為教學單元練習，與作業本身無關
+
+## 相關檔案
+
+```
+src/
+├── AppHw3.vue                 # 主應用程式
+├── main.js                    # 應用程式入口點
+├── components/                # ⚙️元件
+│   ├── ProductList.vue        # 商品清單元件
+│   ├── CartList.vue           # 購物車清單元件
+│   └── OrderInfo.vue          # 訂單資訊元件
+└── stores/                    # 🍍Pinia
+    ├── cart.js                # 購物車狀態管理
+    └── order.js               # 訂單狀態管理
+```
+
+## 額外項目
+
+- 導入 Sass，嘗試修改一項 Bootstrap 設定
+- 導入 Pinia，提升元件狀態管理開發體驗 (透過 AI 自學)
+- 導入 SweetAlert2，提供更好的通知視窗體驗
+
+## 展示連結
+
+https://dpi627.github.io/HexVueHw03/
