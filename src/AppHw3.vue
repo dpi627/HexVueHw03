@@ -59,33 +59,38 @@
       <hr />
       <div class="row justify-content-center">
         <div class="col-8">
-          <div class="card">
+          <div class="card" v-if="order.orderId">
             <div class="card-body">
               <div class="card-title">
-                <h5>訂單 #{{ order.orderId }}</h5>
+                <h5>訂單</h5>
+                <small class="text-end text-primary">#{{ order.orderId }}</small>
                 <table class="table">
                   <thead>
                     <tr>
                       <th scope="col">品項</th>
-                      <th scope="col">數量</th>
-                      <th scope="col">小計</th>
+                      <th scope="col" class="text-end">數量</th>
+                      <th scope="col" class="text-end">小計</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr v-for="item in order.items" :key="item.id">
                       <td>{{ item.name }}</td>
-                      <td>{{ item.quantity }}</td>
-                      <td>{{ item.subtotal }}</td>
+                      <td class="text-end">{{ item.quantity }}</td>
+                      <td class="text-end">{{ item.subtotal }}</td>
                     </tr>
                   </tbody>
                 </table>
-                <div class="text-end">備註: <span>{{ order.memo }}</span></div>
-                <div class="text-end">
+                <fieldset v-if="order.memo" class="form-grop border border-primary rounded p-2">
+                  <legend class="col-form-label fs-6">備註:</legend>
+                  <span class="ps-3">{{ order.memo }}</span>
+                </fieldset>
+                <div class="text-end mt-4">
                   <h5>總計: <span>${{ order.totalPrice }}</span></h5>
                 </div>
               </div>
             </div>
           </div>
+          <div v-else class="alert alert-secondary text-center">尚未建立訂單</div>
         </div>
       </div>
     </div>
