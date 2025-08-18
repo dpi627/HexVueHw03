@@ -49,6 +49,14 @@
               <h5>總計: <span>${{ cart.totalPrice }}</span></h5>
             </div>
             <textarea v-model="cart.memo" class="form-control mb-3" rows="3" placeholder="備註"></textarea>
+            <div class="mb-2">
+              <span v-for="sample in memoSamples" :key="sample.text" class="me-2">
+                <a href="#" @click.prevent="addMemoSample(sample.text)"
+                  class="btn btn-outline-primary btn-sm p-0 ps-1 pe-1">
+                  {{ sample.text }}
+                </a>
+              </span>
+            </div>
             <div class="text-end">
               <button @click.prevent="createOrder" class="btn btn-primary">送出</button>
             </div>
@@ -108,6 +116,16 @@ const order = useOrderStore()
 const createOrder = () => {
   order.create(cart)
   cart.clear()
+}
+
+const memoSamples = ref([
+  { "text": "不需餐具" },
+  { "text": "自備提袋" },
+  { "text": "全部微微" },
+])
+
+const addMemoSample = (memo) => {
+  cart.memo += (cart.memo) ? `, ${memo}` : memo
 }
 
 const drinks = ref([
