@@ -70,8 +70,10 @@
           <div class="card" v-if="order.orderId">
             <div class="card-body">
               <div class="card-title">
-                <h5>訂單</h5>
-                <small class="text-end text-primary">#{{ order.orderId }}</small>
+                <div class="d-flex w-100 justify-content-between">
+                  <h5>訂單</h5>
+                  <small class="text-end text-primary">#{{ order.orderId }}</small>
+                </div>
                 <table class="table">
                   <thead>
                     <tr>
@@ -88,12 +90,12 @@
                     </tr>
                   </tbody>
                 </table>
-                <fieldset v-if="order.memo" class="form-grop border border-primary rounded p-2">
-                  <legend class="col-form-label fs-6">備註:</legend>
-                  <span class="ps-3">{{ order.memo }}</span>
+                <fieldset v-if="order.memo" class="form-grop border border-primary rounded ps-2 pb-2">
+                  <legend class="col-form-label"><small>備註:</small></legend>
+                  <small class="ps-3">{{ order.memo }}</small>
                 </fieldset>
-                <div class="text-end mt-4">
-                  <h5>總計: <span>${{ order.totalPrice }}</span></h5>
+                <div class="text-end mt-3">
+                  <h5>總計: <span>$ {{ order.totalPrice }}</span></h5>
                 </div>
               </div>
             </div>
