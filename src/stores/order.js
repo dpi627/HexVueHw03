@@ -1,5 +1,6 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import Swal from 'sweetalert2'
 
 export const useOrderStore = defineStore('order', () => {
   const orderId = ref(0)
@@ -10,6 +11,15 @@ export const useOrderStore = defineStore('order', () => {
     orderId.value = new Date().getTime()
     items.value = cart.items
     memo.value = cart.memo
+
+    Swal.fire({
+      title: '成功建立訂單',
+      text: `訂單 [#${orderId.value}] 已建立`,
+      icon: 'success',
+      timer: 1500,
+      timerProgressBar: true,
+      showConfirmButton: false,
+    })
   }
 
   const totalPrice = computed(() => {

@@ -31,10 +31,10 @@
       </tbody>
     </table>
     <div class="text-end mb-3">
-      <h5>總計: <span>${{ cart.totalPrice }}</span></h5>
+      <h5>總計: <span>$ {{ cart.totalPrice }}</span></h5>
     </div>
-    <textarea v-model="cart.memo" class="form-control mb-3" rows="3" placeholder="備註"></textarea>
-    <div class="mb-2">
+    <textarea v-model="cart.memo" class="form-control mb-2" rows="3" placeholder="備註"></textarea>
+    <div class="mb-3 text-end">
       <span v-for="sample in memoSamples" :key="sample.text" class="me-2">
         <a href="#" @click.prevent="addMemoSample(sample.text)" class="btn btn-outline-primary btn-sm p-0 ps-1 pe-1">
           {{ sample.text }}
